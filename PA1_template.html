@@ -438,16 +438,8 @@ head(stepdata)</code></pre>
 <ol style="list-style-type: decimal">
 <li>Calculate total number of steps taken each day. Make a histogram of the total number of steps taken each day</li>
 </ol>
-<pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>databydate &lt;- stepdata %&gt;% select(date, steps) %&gt;% group_by(date) %&gt;% summarize(tsteps= sum(steps)) %&gt;%na.omit()</code></pre>
+<pre class="r"><code>library(dplyr)
+databydate &lt;- stepdata %&gt;% select(date, steps) %&gt;% group_by(date) %&gt;% summarize(tsteps= sum(steps)) %&gt;%na.omit()</code></pre>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre class="r"><code>png(filename=&quot;Plot_1.png&quot;)
 hist(databydate$tsteps, xlab = &quot;Total daily Steps&quot;,main=&quot;Histogram of Total Steps by day&quot;, breaks = 20)
