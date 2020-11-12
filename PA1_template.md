@@ -49,7 +49,12 @@ databydate <- stepdata %>% select(date, steps) %>% group_by(date) %>% summarize(
 ```r
 png(filename="Plot_1.png")
 hist(databydate$tsteps, xlab = "Total daily Steps",main="Histogram of Total Steps by day", breaks = 20)
-#dev.off()
+dev.off()
+```
+
+```
+## png 
+##   2
 ```
 
   2. Calculate and report the mean and median of the total number of steps taken per day
@@ -85,7 +90,12 @@ databyinterval <- stepdata%>% select(interval, steps) %>% na.omit() %>% group_by
 ```r
 png(filename="Plot_2.png")
 ggplot(databyinterval, aes(x=interval, y=tsteps))+ geom_line()
-#dev.off()
+dev.off()
+```
+
+```
+## png 
+##   2
 ```
 
   2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -162,7 +172,12 @@ summary(FullSummedDataByDay,15)
 ```r
 png(filename="Plot_3.png")
 hist(FullSummedDataByDay$totalsteps, xlab = "Steps", ylab = "Frequency", main = "Total Daily Steps", breaks = 20)
-#dev.off()
+dev.off()
+```
+
+```
+## png 
+##   2
 ```
 
 Compare the mean and median of Old and New data
@@ -222,6 +237,11 @@ png(filename="Plot_4.png")
 ggplot(meandataweekendweekday, aes(x=interval, y=steps, color=weekend)) + geom_line()+
   facet_grid(weekend ~.) + xlab("Interval") + ylab("Mean of Steps") +
   ggtitle("Comparison of Average Number of Steps in Each Interval")
-#dev.off()
+dev.off()
+```
+
+```
+## png 
+##   2
 ```
 

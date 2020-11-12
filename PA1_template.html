@@ -451,7 +451,9 @@ head(stepdata)</code></pre>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre class="r"><code>png(filename=&quot;Plot_1.png&quot;)
 hist(databydate$tsteps, xlab = &quot;Total daily Steps&quot;,main=&quot;Histogram of Total Steps by day&quot;, breaks = 20)
-#dev.off()</code></pre>
+dev.off()</code></pre>
+<pre><code>## png 
+##   2</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Calculate and report the mean and median of the total number of steps taken per day</li>
 </ol>
@@ -471,7 +473,9 @@ databyinterval &lt;- stepdata%&gt;% select(interval, steps) %&gt;% na.omit() %&g
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre class="r"><code>png(filename=&quot;Plot_2.png&quot;)
 ggplot(databyinterval, aes(x=interval, y=tsteps))+ geom_line()
-#dev.off()</code></pre>
+dev.off()</code></pre>
+<pre><code>## png 
+##   2</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?</li>
 </ol>
@@ -523,7 +527,9 @@ names(FullSummedDataByDay)[2] =&quot;totalsteps&quot;</code></pre>
 <p>4 Making a histogram</p>
 <pre class="r"><code>png(filename=&quot;Plot_3.png&quot;)
 hist(FullSummedDataByDay$totalsteps, xlab = &quot;Steps&quot;, ylab = &quot;Frequency&quot;, main = &quot;Total Daily Steps&quot;, breaks = 20)
-#dev.off()</code></pre>
+dev.off()</code></pre>
+<pre><code>## png 
+##   2</code></pre>
 <p>Compare the mean and median of Old and New data</p>
 <pre class="r"><code>oldmean &lt;- mean(databydate$tsteps, na.rm = TRUE)
 newmean &lt;- mean(FullSummedDataByDay$totalsteps)
@@ -556,7 +562,9 @@ png(filename=&quot;Plot_4.png&quot;)
 ggplot(meandataweekendweekday, aes(x=interval, y=steps, color=weekend)) + geom_line()+
   facet_grid(weekend ~.) + xlab(&quot;Interval&quot;) + ylab(&quot;Mean of Steps&quot;) +
   ggtitle(&quot;Comparison of Average Number of Steps in Each Interval&quot;)
-#dev.off()</code></pre>
+dev.off()</code></pre>
+<pre><code>## png 
+##   2</code></pre>
 </div>
 
 
